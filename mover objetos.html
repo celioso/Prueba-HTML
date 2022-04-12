@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dateTransfer.getDate("text");
+        ev.target.appendChild(document,getElementById(data));
+    }
+    </script>
+    </head>
+
+    <body>
+        <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)" style="border:1px solid black; width:200px; height:200px">
+        </div>
+
+        <div id="image" src="http://www.sololearn.com/images/tree.jpg" draggeble="true" ondragstart="drag(event)" width="150" heaght="50" alt=""></div>
+
+    </body>
+</html>
